@@ -297,7 +297,6 @@ public class Main {
                 else if (score >= 100000 && increment3 < 113) {
                     increment3 += 16;
                     button3.setText("Click | " + increment3 + " | MAX");
-                    bgLabel.add(eeButton);
                     bgLabel.revalidate();
                     bgLabel.repaint();
                 }
