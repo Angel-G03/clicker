@@ -39,10 +39,6 @@ public class Main {
     private static int increment1 = 1;
     private static int increment2 = 16;
     private static int increment3 = 64;
-    private static JButton eeButton;
-    public static File eeMusic;
-    public static AudioInputStream audioStream2;
-    public static Clip clip2;
     public static void main(String[] args) throws Exception {
 
         on = true;
@@ -87,44 +83,6 @@ public class Main {
         scoreLabel2.setFont(new Font("Times New Roman",Font.ITALIC,30));
         scoreLabel2.setBounds(290,115,200,100);
         bgLabel.add(scoreLabel2);
-
-        eeButton = new JButton("Shagadelic Baby!");
-        eeButton.setBounds(200,550,175,50);
-        eeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                clip.close();
-                eeMusic = new File("easterEgg.wav");
-                try {
-                    audioStream2 = AudioSystem.getAudioInputStream(eeMusic);
-                } catch (UnsupportedAudioFileException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                } catch (IOException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
-                try {
-                    clip2 = AudioSystem.getClip();
-                } catch (LineUnavailableException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
-                try {
-                    clip2.open(audioStream2);
-                } catch (LineUnavailableException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                } catch (IOException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
-                while (on) {
-                    clip2.start();
-                    clip2.loop(Clip.LOOP_CONTINUOUSLY);
-                    break;
-                }
-            }
-        });
 
         button1 = new JButton("Click | " + increment1);
         button1.setBounds(200,450,175,50);
@@ -406,9 +364,8 @@ public class Main {
                 }
             }
         });
+        
         frame.pack();
         frame.setVisible(true);      
     }
 }
-
-
