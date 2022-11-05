@@ -47,13 +47,13 @@ public class Main {
         panel.setLayout(null);
         frame.setResizable(false);
 
-        ImageIcon bgImg = new ImageIcon("mineNow.png");
+        ImageIcon bgImg = new ImageIcon("images/mineNow.png");
         JLabel bgLabel = new JLabel();
         bgLabel.setIcon(bgImg);
         bgLabel.setLayout(null);
         frame.setContentPane(bgLabel);
 
-        File bgMusic = new File("music.wav");
+        File bgMusic = new File("music/music.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(bgMusic);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
@@ -64,7 +64,7 @@ public class Main {
         }
 
         titleLabel = new JLabel();
-        ImageIcon titleImg = new ImageIcon("clicker32.png");
+        ImageIcon titleImg = new ImageIcon("images/clicker32.png");
         titleLabel.setBounds(310, 60, 90,60);
         titleLabel.setIcon(titleImg);
         bgLabel.add(titleLabel);
