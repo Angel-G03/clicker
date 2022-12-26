@@ -6,6 +6,8 @@ import java.io.File;
 
 public class Main {
     
+    // todo: Clean up
+    
     private static JPanel panel;
     private static boolean on;
     private static JFrame frame;
